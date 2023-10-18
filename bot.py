@@ -47,7 +47,8 @@ def write_answer():
     if len(ans) < 50:
         ans += " very good. Therefore I chose this response."
     # locate text box
-    box = pyautogui.locateOnScreen('ans_box.png', minSearchTime=0, confidence=0.7)
+    box = pyautogui.locateOnScreen("ans_box.png", minSearchTime=0, confidence=0.7)
+    # assigning variables makes it easier to read in the future
     x = box[0]
     y = box[1]
     x_randomizer = box[2]
@@ -60,15 +61,9 @@ def write_answer():
     pyautogui.write(ans)
 
 
-def testing_ground():
-    time.sleep(1)
-    x, y = pyautogui.position()
-    # use write(msg) to input text, need to call click() in the right spot first
-    # pyautogui.write("test")
-    print("x = " + str(x) + ", y = " + str(y))
+# execute()
+write_answer()
 
-
-execute()
 # while True:
 #     # do later
 #     try:
