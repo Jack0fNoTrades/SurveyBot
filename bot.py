@@ -47,8 +47,7 @@ def click(x, y, x_factor_upper, y_factor_upper, x_factor_lower=0, y_factor_lower
     x += x_randomizer
     y += y_randomizer
     # moveTo() avoids cursor teleporting and makes it more like human behavior.
-    pyautogui.moveTo(x, y, duration=0.1)
-    print(x, y)
+    pyautogui.moveTo(x, y, duration=0.2)
     pyautogui.click(x, y)
 
 
@@ -68,13 +67,15 @@ def write_answer():
     if len(ans) < 50:
         ans += " very good. Therefore I chose this response."
     # locate text box
-    box = list(pyautogui.locateOnScreen("ans_box.png", minSearchTime=0.0, grayscale=True, confidence=0.7))
+    box = list(pyautogui.locateOnScreen("ans_box.png", minSearchTime=0.0, grayscale=True, confidence=0.5))
     # The first two parameters of box is the coordinates of the top left corner
     # the 3rd parameter is the width, the 4th parameter is the height.
     # These parameters have the exact values needed for click().
     # [385, 1160, 1222, 174]
     # it's actually 408 575 ish
     # pyautogui locate functions always return incorrect coordinates, so workarounds are required.
+    # In addition, it often requires 2 clicks to properly navigate to the answer box
+    click((box[0]+box[2])/2-50, box[1]/2, 50, box[3]/2)
     click((box[0]+box[2])/2-50, box[1]/2, 50, box[3]/2)
     # sleep some more to simulate human behavior
     interval = random.randint(0, 2)
@@ -117,8 +118,8 @@ def click_random_choice():
 # while True:
 #     time.sleep(1)
 #     print(pyautogui.position())
-# time.sleep(2)
-# write_answer()
+time.sleep(2)
+write_answer()
 
 # "main executable" of the bot
 # while True:
