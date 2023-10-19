@@ -114,17 +114,11 @@ def click_random_choice():
     click(location[0], location[1], location[2], location[3])
 
 
-# execute()
 # while True:
 #     time.sleep(1)
 #     print(pyautogui.position())
-# 996, 1247
-# 720 /2
-# 1709, 1106
-# 408, 1030
-# print(pyautogui.locateCenterOnScreen("ans_box.png", minSearchTime=0.0, grayscale=True, confidence=0.7))
-time.sleep(2)
-write_answer()
+# time.sleep(2)
+# write_answer()
 
 # "main executable" of the bot
 # while True:
