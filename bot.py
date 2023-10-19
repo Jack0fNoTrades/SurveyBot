@@ -75,8 +75,8 @@ def write_answer():
     # it's actually 408 575 ish
     # pyautogui locate functions always return incorrect coordinates, so workarounds are required.
     # In addition, it often requires 2 clicks to properly navigate to the answer box
-    click((box[0]+box[2])/2-50, box[1]/2, 50, box[3]/2)
-    click((box[0]+box[2])/2-50, box[1]/2, 50, box[3]/2)
+    click((box[0]+box[2])/2-100, box[1]/2, 50, box[3]/2)
+    click((box[0]+box[2])/2-100, box[1]/2, 50, box[3]/2)
     # sleep some more to simulate human behavior
     interval = random.randint(0, 2)
     time.sleep(interval)
