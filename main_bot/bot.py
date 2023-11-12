@@ -5,6 +5,7 @@ import string
 import numpy as np
 import pytesseract
 import cv2
+from util.util import click
 
 # put/change desired x, y ranges, factors here
 desired_x_start_1 = 370
@@ -39,18 +40,6 @@ def execute():
         pass
 
 
-def click(x, y, x_factor_upper, y_factor_upper, x_factor_lower=0, y_factor_lower=0):
-    # The values of the first 4 parameters corresponds exactly to the attributes of a box object
-    # The last 2 parameters are only used if we don't want to start at the top left corner
-    x_randomizer = random.randint(x_factor_lower, x_factor_upper)
-    y_randomizer = random.randint(y_factor_lower, y_factor_upper)
-    x += x_randomizer
-    y += y_randomizer
-    # moveTo() avoids cursor teleporting and makes it more like human behavior.
-    pyautogui.moveTo(x, y, duration=0.2)
-    pyautogui.click(x, y)
-
-
 def write_answer():
     # sleep a certain amount of time to simulate human behavior
     interval = random.randint(0, 3)
@@ -74,8 +63,6 @@ def write_answer():
     # [385, 1160, 1222, 174]
     # it's actually 408 575 ish
     # pyautogui locate functions always return incorrect coordinates, so workarounds are required.
-    # In addition, it often requires 2 clicks to properly navigate to the answer box
-    click((box[0]+box[2])/2-100, box[1]/2, 50, box[3]/2)
     click((box[0]+box[2])/2-100, box[1]/2, 50, box[3]/2)
     # sleep some more to simulate human behavior
     interval = random.randint(0, 2)
@@ -118,8 +105,11 @@ def click_random_choice():
 # while True:
 #     time.sleep(1)
 #     print(pyautogui.position())
+
+# time.sleep(2)
+# write_answer()
 time.sleep(2)
-write_answer()
+pyautogui.write("A typical morning routine for preparing breakfast might include the following steps: Wake Up: Begin by waking up at the desired time, which may vary depending on individual schedules and preferences.")
 
 # "main executable" of the bot
 # while True:
