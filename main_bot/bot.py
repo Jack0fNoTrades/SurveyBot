@@ -108,10 +108,13 @@ def click_random_choice():
 
 # time.sleep(2)
 # write_answer()
-time.sleep(2)
-pyautogui.write("A typical morning routine for preparing breakfast might include the following steps: Wake Up: Begin by waking up at the desired time, which may vary depending on individual schedules and preferences.")
 
-# "main executable" of the bot
+# for i in range(200):
+#     time.sleep(20)
+#     pyautogui.leftClick()
+
+time.sleep(3)
+pyautogui.write("Cannabis sativa: Appearance: Sativa plants are tall, with narrow leaves and loose, airy buds. Effects: Sativa strains are often associated with uplifting and energizing effects. They may enhance creativity, focus, and sociability. Common Uses: Sativa strains are commonly consumed during the day due to their potential to promote activity and alertness. They are sometimes used for managing mood disorders and fatigue.")
 # while True:
 #     try:
 #         # execute()
