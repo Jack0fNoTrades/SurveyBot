@@ -1,18 +1,20 @@
 import pyautogui
 import time
 import random
-from util.util import click
-
-safari = [1183, 60]
-chrome = [82, 97]
 
 
-# automatically refresh the page for the specified browser
-def auto_refresh(browser):
+# Although there are numerous front end applications that does this, they are not able to detect
+# events that are happening on screen, and some of them may not even have the option of randomized
+# refresh intervals.
+def auto_refresh():
     while pyautogui.locateOnScreen("search_hit.png", grayscale=True, confidence=0.8) is None:
-        click(browser[0], browser[1], 4, 4)
+        pyautogui.keyDown("command")
+        pyautogui.keyDown("r")
+        time.sleep(0.2)
+        pyautogui.keyUp("command")
+        pyautogui.keyUp("r")
         # wait a bit between searches
-        time.sleep(random.randint(600, 2600))
+        time.sleep(random.randint(180, 600))
 
 
-auto_refresh(safari)
+auto_refresh()
