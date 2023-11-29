@@ -39,6 +39,6 @@ while counter < 3:
     # reload game
     click(desired_x_start_2, desired_y_start_2, x_factor_2, y_factor_2)
     # sleep some time to wait for the game to reload
-    sleep_time = random.randint(3, 4)
+    sleep_time = random.randint(5, 7)
     time.sleep(sleep_time)
 

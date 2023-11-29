@@ -22,4 +22,4 @@ def auto_search(low, high, browser):
     click(browser[0], browser[1], 5, 5)
 
 
-auto_search(7, 10, chrome)
+auto_search(3, 5, chrome)
