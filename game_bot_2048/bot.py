@@ -28,17 +28,22 @@ def play2048():
 
 
 # sleep for 3 seconds to allow time to manually bring game window in focus
-time.sleep(3)
-counter = 0
-# we only need 3 successful games per run
-while counter < 3:
-    play2048()
-    # detect if the most recent game is successful
-    if pyautogui.locateOnScreen("2SB.png", confidence=0.8) is not None:
-        counter += 1
-    # reload game
-    click(desired_x_start_2, desired_y_start_2, x_factor_2, y_factor_2)
-    # sleep some time to wait for the game to reload
-    sleep_time = random.randint(5, 7)
-    time.sleep(sleep_time)
+def execute():
+    time.sleep(3)
+    counter = 0
+    # we only need 3 successful games per run
+    while counter < 3:
+        play2048()
+        # detect if the most recent game is successful
+        if pyautogui.locateOnScreen("2SB.png", confidence=0.8) is not None:
+            counter += 1
+        # reload game
+        click(desired_x_start_2, desired_y_start_2, x_factor_2, y_factor_2)
+        # sleep some time to wait for the game to reload
+        sleep_time = random.randint(5, 7)
+        time.sleep(sleep_time)
+
+
+# execute()
+
 
