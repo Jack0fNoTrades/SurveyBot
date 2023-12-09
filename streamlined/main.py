@@ -5,9 +5,8 @@ from util.util import click
 # Integrates previously implemented scripts so that we can automate multiple tasks with only 1 execution.
 # Especially helpful for AFKing overnight.
 
-click(180, 60, 2, 2)
 execute()
 click(425, 60, 2, 2)
-auto_search(3, 5, chrome)
+auto_search(7, 10, chrome)
 click(340, 1065, 15, 15)
-auto_search(7, 10, safari)
+auto_search(3, 5, safari)
