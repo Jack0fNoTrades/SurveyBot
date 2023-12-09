@@ -5,7 +5,8 @@ A collection of bots written in Python that automates simple tasks for myself(ow
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Note to visitors:
-* main_bot is discontinued due to PyAutoGUI's locate functions not working correctly on a Mac, the x coordinates in particular. Other bots are still implementable but coordinates for clicks have to be hardcoded. Although losing portability is not a concern(see [disclaimer](#disclaimer)), I will still continue the search for solutions.
+* answer_bot is discontinued due to PyAutoGUI's locate functions not working correctly on a Mac, the x coordinates in particular. Other bots are still implementable but coordinates for clicks have to be hardcoded. Although losing portability is not a concern(see [disclaimer](#disclaimer)), I will still continue the search for solutions.
+* Duplicate screenshots were necessary in the streamlined directory due to file access permission issues that would otherwise occur.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
