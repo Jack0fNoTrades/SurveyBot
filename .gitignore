@@ -3,3 +3,5 @@
 misc/**
 misc/playfile.py
 misc/playfile2.py
+.git/**
+venv/**
