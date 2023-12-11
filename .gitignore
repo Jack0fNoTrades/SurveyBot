@@ -1,0 +1,5 @@
+.DS_Store
+.idea
+misc/**
+misc/playfile.py
+misc/playfile2.py
