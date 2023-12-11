@@ -20,7 +20,7 @@ def click(x, y, x_factor_upper, y_factor_upper, x_factor_lower=0, y_factor_lower
 
 
 # utility function for finding the returned coordinates of objects on screen
-def position():
+def print_position():
     while True:
         time.sleep(1)
         print(pyautogui.position())

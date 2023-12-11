@@ -4,7 +4,7 @@ import random
 from util.util import click
 
 chrome = [540, 500]
-safari = [540, 465]
+safari = [540, 450]
 
 
 # Although there are numerous front end applications that does this, they are not able to detect
@@ -22,4 +22,4 @@ def auto_search(low, high, browser):
     click(browser[0], browser[1], 5, 5)
 
 
-auto_search(3, 5, chrome)
+# auto_search(3, 5, chrome)
