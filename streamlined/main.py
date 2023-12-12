@@ -5,8 +5,11 @@ from util.util import click
 # Integrates previously implemented scripts so that we can automate multiple tasks with only 1 execution.
 # Especially helpful for AFKing overnight.
 
+# Set Safari browser icon position
+icon = [320, 1065]
+
 execute()
 click(425, 60, 2, 2)
 auto_search(7, 10, chrome)
-click(340, 1065, 15, 15)
+click(icon[0], icon[1], 15, 15)
 auto_search(3, 5, safari)
