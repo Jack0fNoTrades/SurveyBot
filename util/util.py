@@ -25,3 +25,10 @@ def print_position():
         time.sleep(1)
         print(pyautogui.position())
 
+
+def refresh():
+    pyautogui.keyDown("command")
+    pyautogui.keyDown("r")
+    time.sleep(0.2)
+    pyautogui.keyUp("command")
+    pyautogui.keyUp("r")

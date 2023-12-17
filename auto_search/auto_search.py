@@ -1,7 +1,7 @@
 import pyautogui
 import time
 import random
-from util.util import click
+from util.util import click, refresh
 
 chrome = [540, 500]
 safari = [540, 450]
@@ -12,11 +12,7 @@ safari = [540, 450]
 # refresh intervals.
 def auto_search(low, high, browser):
     while pyautogui.locateOnScreen("search_hit.png", grayscale=True, confidence=0.8) is None:
-        pyautogui.keyDown("command")
-        pyautogui.keyDown("r")
-        time.sleep(0.2)
-        pyautogui.keyUp("command")
-        pyautogui.keyUp("r")
+        refresh()
         # wait a bit between searches
         time.sleep(random.randint(low, high))
     click(browser[0], browser[1], 5, 5)
