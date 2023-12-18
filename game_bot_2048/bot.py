@@ -1,19 +1,15 @@
 import time
 import pyautogui
 import random
-from util.util import click, refresh, print_position
+from util.util import click, refresh
 
 movement_list = ["left", "right", "up", "down"]
 desired_x_start_1 = 740
 desired_y_start_1 = 760
-# desired_x_end_1 = 790
-# desired_y_end_1 = 820
 x_factor_1 = 50
 y_factor_1 = 30
 desired_x_start_2 = 690
 desired_y_start_2 = 665
-# desired_x_end_2 = 770
-# desired_y_end_2 = 675
 x_factor_2 = 80
 y_factor_2 = 10
 
@@ -34,13 +30,17 @@ def reload():
     pyautogui.scroll(-5)
 
 
+def wait():
+    while(pyautogui.locateOnScreen("playbutton.png", grayscale=True, confidence=0.8)) is None:
+        time.sleep(1)
+
+
 # sleep for 3 seconds to allow time to manually bring game window in focus
 def execute():
     time.sleep(4)
     reload()
     # wait for loading to finish
-    while(pyautogui.locateOnScreen("playbutton.png", grayscale=True, confidence=0.8)) is None:
-        time.sleep(1)
+    wait()
     counter = 0
     # we only need 3 successful games per run
     while counter < 3:
@@ -50,11 +50,5 @@ def execute():
             counter += 1
         # reload game
         click(desired_x_start_2, desired_y_start_2, x_factor_2, y_factor_2)
-        # sleep some time to wait for the game to reload
-        sleep_time = random.randint(5, 7)
-        time.sleep(sleep_time)
-
-
-execute()
-
-
+        # wait for the game to reload
+        wait()

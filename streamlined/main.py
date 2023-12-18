@@ -9,7 +9,8 @@ from util.util import click
 # Especially helpful for AFKing overnight.
 
 # Set Safari browser icon position
-icon = [310, 1065]
+icon = [320, 1065]
+scheduled_hour = 3
 
 
 def main():
@@ -29,7 +30,7 @@ def get_hour():
 
 
 hour = get_hour()
-while hour < 4:
+while hour < scheduled_hour:
     time.sleep(60 * 60)
     hour = get_hour()
 main()
