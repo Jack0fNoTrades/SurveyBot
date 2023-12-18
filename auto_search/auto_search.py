@@ -1,7 +1,7 @@
 import pyautogui
 import time
 import random
-from util.util import click, refresh
+from util.util import click, refresh, print_position
 
 chrome = [540, 500]
 safari = [540, 450]
@@ -16,6 +16,3 @@ def auto_search(low, high, browser):
         # wait a bit between searches
         time.sleep(random.randint(low, high))
     click(browser[0], browser[1], 5, 5)
-
-
-# auto_search(3, 5, chrome)
