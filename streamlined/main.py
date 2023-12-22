@@ -9,15 +9,15 @@ from util.util import click
 # Especially helpful for AFKing overnight.
 
 # Set Safari browser icon position
-icon = [320, 1065]
-scheduled_hour = 3
+icon = [290, 1065]
+scheduled_hour = 4
 
 
 def main():
     execute()
     click(425, 60, 2, 2)
     auto_search(7, 10, chrome)
-    click(icon[0], icon[1], 15, 15)
+    click(icon[0], icon[1], 3, 3)
     auto_search(3, 5, safari)
 
 
