@@ -27,7 +27,7 @@ def main():
     click(chrome_icon[0], chrome_icon[1], 3, 3)
     time.sleep(0.7)
     click(1230, 180, 5, 5)
-    time.sleep(0.4)
+    time.sleep(3)
     auto_search(3, 5, chrome)
 
 
