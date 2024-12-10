@@ -50,5 +50,7 @@ def execute():
             counter += 1
         # reload game
         click(desired_x_start_2, desired_y_start_2, x_factor_2, y_factor_2)
+        # Add additional wait in response to the new version of 2048 sometimes breaking the program
+        time.sleep(3)
         # wait for the game to reload
         wait()
